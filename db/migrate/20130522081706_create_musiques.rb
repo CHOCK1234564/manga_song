@@ -2,6 +2,7 @@ class CreateMusiques < ActiveRecord::Migration
   def change
     create_table :musiques do |t|
       t.string :title
+      t.string :url 
 
 
       t.timestamps
