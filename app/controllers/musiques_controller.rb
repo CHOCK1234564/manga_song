@@ -42,7 +42,14 @@ class MusiquesController < ApplicationController
   # POST /musiques
   # POST /musiques.json
   def create
-    @musique = Musique.new(params[:musique])
+    @musique = Musique.new
+    @musique.title = params[:musique][:title]
+    uploaded_io = params[:musique][:name]
+    @musique.name = uploaded_io.original_filename
+
+    File.open(Rails.root.join('public/music/', uploaded_io.original_filename), 'wb') do |file|
+      file.write(uploaded_io.read)
+    end
 
     respond_to do |format|
       if @musique.save
