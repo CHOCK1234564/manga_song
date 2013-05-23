@@ -31,9 +31,12 @@
   src="\music\<%= musique.name%>">
 Your user agent does not support the HTML5 Audio element.
 </audio> </td>
+    <% if user_signed_in? %>
     <td><%= link_to 'Show', musique %></td>
     <td><%= link_to 'Edit', edit_musique_path(musique) %></td>
     <td><%= link_to 'Destroy', musique, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% else %>
+    <% end %>
   </tr>
 <% end %>
 </table>
