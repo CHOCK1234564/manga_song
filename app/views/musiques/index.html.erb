@@ -41,11 +41,12 @@ Your user agent does not support the HTML5 Audio element.
 <% end %>
 </table>
 
-
-<p>musique en cours : </p>
+<p>musique en cours :</p>
 
 <%= will_paginate @musiques %>
 
 <br />
-
-<%= link_to 'New Musique', new_musique_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Musique', new_musique_path %>
+<% else %>
+<% end %>
