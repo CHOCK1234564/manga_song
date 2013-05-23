@@ -1,4 +1,18 @@
 <h1>Manga Songs</h1>
+
+<div>
+ <%= search_form_for @q do |f| %>
+
+  <%= f.label :title_cont %>
+
+  <%= f.text_field :title_cont %>
+
+  <%= f.submit %>
+
+<% end %>
+ </div>
+
+
 <table>
   <tr>
     <th>Title</th>
