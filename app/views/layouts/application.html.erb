@@ -67,10 +67,15 @@
             <div class="well sidebar-nav">
               <h3>Administration</h3>
               <ul class="nav nav-list">
-                <li class="nav-header">Gestion de compte</li>
-                <li><%= link_to "Creer un compte", "/path1"  %></li>
-                <li><%= link_to "Modifer un compte", "/path2"  %></li>
-                <li><%= link_to "Se deconnecter", "/path3"  %></li>
+                <li class="nav-header"><%= current_user.email %></li>
+
+                <% if user_signed_in? %>
+                  <li><%= link_to "Modifer un compte", "/users/edit"  %></li>
+                  <li><%= link_to "Se deconnecter", destroy_user_session_path, :method => :delete  %></li>
+                <% else %>
+                  <li><%= link_to "Creer un compte", new_user_session_path  %></li>
+                  <li><%= link_to "Se connecter", new_user_session_path  %></li>
+                <% end %>
               </ul>
             </div><!--/.well -->
           </div><!--/span-->

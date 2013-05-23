@@ -1,6 +1,6 @@
 MangaSong::Application.routes.draw do
   devise_for :users
-
+  
   resources :musiques
   resources :comments, :only => [:create]
 
