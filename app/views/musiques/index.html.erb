@@ -1,0 +1,38 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<h1>Manga Songs</h1>
+<h1>Listing musiques</h1>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>chemin</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @musiques.each do |musique| %>
+  <tr>
+    <td><%= musique.title %></td>
+    <td><%= musique.comments.count %></td>
+    <td><audio controls id="video1"
+  src="\music\<%= musique.name%>">
+Your user agent does not support the HTML5 Audio element.
+</audio> </td>
+    <td><%= link_to 'Show', musique %></td>
+    <td><%= link_to 'Edit', edit_musique_path(musique) %></td>
+    <td><%= link_to 'Destroy', musique, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+TEST
+
+<p>musique en cours : </p>
+
+
+
+<br />
+
+<%= link_to 'New Musique', new_musique_path %>
