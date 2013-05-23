@@ -3,7 +3,7 @@
 <div>
  <%= search_form_for @q do |f| %>
 
-  <%= f.label :title_cont %>
+  <%= f.label 'Rechercher une musique :' %>
 
   <%= f.text_field :title_cont %>
 
@@ -38,9 +38,6 @@ Your user agent does not support the HTML5 Audio element.
   </tr>
 <% end %>
 </table>
-TEST
-
-<p>musique en cours : </p>
 
 <%= will_paginate @musiques %>
 
