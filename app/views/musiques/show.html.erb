@@ -16,16 +16,11 @@
 	<%end%>
 </ul>
 
-<%= form_for(@musique.comments.new) do |f| %>
+<%= simple_form_for @musique.comments.new do |f| %>
 	<%= f.hidden_field :music_id, :value => @musique.id %>
-	<div class="field">
-	<%= f.label :content %><br />
-    <%= f.text_field :content %>
-  </div>
-   <div class="actions">
-    <%= f.submit %>
-  </div>
-  <%end%>
+	<%= f.input :content %>
+  <%= f.submit %>
+<%end%>
 
 
 <%= link_to 'Edit', edit_musique_path(@musique) %> |

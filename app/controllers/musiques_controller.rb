@@ -51,7 +51,9 @@ class MusiquesController < ApplicationController
       file.write(uploaded_io.read)
     end
 
+    @musique.category_id = params[:musique][:category_id]
     respond_to do |format|
+
       if @musique.save
         format.html { redirect_to @musique, notice: 'Musique was successfully created.' }
         format.json { render json: @musique, status: :created, location: @musique }

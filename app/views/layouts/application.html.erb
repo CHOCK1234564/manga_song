@@ -47,10 +47,9 @@
           <a class="brand" href="/musiques#index">Manga Song</a>
           <div class="container nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Fairy Tail", "/path1"  %></li>
-              <li><%= link_to "One Piece", "/path2"  %></li>
-              <li><%= link_to "Bleach", "/path3"  %></li>
-              <li><%= link_to "Et beaucoup d'autres" , "/path4" %></li>
+              <% Category.all.each do |category| %>
+                <li><%= link_to category.name, category  %></li>
+              <% end %>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -73,7 +72,7 @@
                   <li><%= link_to "Modifer un compte", "/users/edit"  %></li>
                   <li><%= link_to "Se deconnecter", destroy_user_session_path, :method => :delete  %></li>
                 <% else %>
-                  <li><%= link_to "Creer un compte", new_user_session_path  %></li>
+                  <li><%= link_to "Creer un compte", new_user_registration_path  %></li>
                   <li><%= link_to "Se connecter", new_user_session_path  %></li>
                 <% end %>
 
